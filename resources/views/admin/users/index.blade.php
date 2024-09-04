@@ -37,8 +37,10 @@
               </tbody>
           </table>
       </div>
-      <div class="row">
-          <a class="btn blue" href="{{ route('admin.users.adicionar')}}">Adicionar</a>
-      </div>
+      @if (Auth::user()->admin == "sim")
+          <div class="row">
+              <a class="btn blue" href="{{ route('admin.users.adicionar')}}">Adicionar</a>
+          </div>
+      @endif
     </div>
 @endsection
